@@ -1,24 +1,8 @@
 import React, { useReducer } from 'react';
 import { employeesList } from '../data';
+import reducer from '../actions';
 
-const reducer = (state, action) => {
-  switch (action.type) {
-    case 'ADD_EMPLOYEE':
-      return {
-        ...state,
-        employees: [...state.employees, action.payload],
-      };
-    case 'REMOVE_EMPLOYEE':
-      return {
-        ...state,
-        employees: state.employees.filter(
-          (employee) => employee.id !== action.payload
-        ),
-      };
-    default:
-      return state;
-  }
-};
+
 
 const Home = () => {
   const [state, dispatch] = useReducer(reducer, { employees: employeesList });
