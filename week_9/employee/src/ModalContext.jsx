@@ -9,6 +9,7 @@ export const ModalContext = createContext([
 
 export function ModalContextProvider({ children }) {
   const [modal, setModal] = useState();
+  console.log(modal);
 
   const openModal = (modalProps) => setModal(modalProps);
   const closeModal = () => setModal(undefined);
