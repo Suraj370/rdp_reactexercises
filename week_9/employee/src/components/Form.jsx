@@ -1,3 +1,4 @@
+
 import React  from "react";
 import { useForm } from "react-hook-form";
 // import reducer from '../actions';
@@ -7,17 +8,21 @@ import useShop from "../EmployeeContext";
 
 
 
+
 function Form({ departments }) {
     const { register, handleSubmit, reset } = useForm();
     const {addEmployee} = useShop();
+
 
     const onSubmit = (data) => {
         const employee = {
             name: data.name,
             department: data.department,
         };
+
         console.log(employee);
         addEmployee(employee);
+
     };
 
     return (
